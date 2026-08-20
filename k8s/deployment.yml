@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: my-ui-deployment
+  namespace: my-ui-ns
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: my-ui
+
+  template:
+    metadata:
+      labels:
+        app: my-ui
+
+    spec:
+      containers:
+        - name: my-ui
+          image: nitishnain0332/travel:latest  
+          ports:
+            - containerPort: 80

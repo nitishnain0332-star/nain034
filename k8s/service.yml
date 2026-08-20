@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-ui-service
+  namespace: my-ui-ns
+spec:
+  type: NodePort
+  selector:
+    app: my-ui
+
+  ports:
+    - port: 5000
+      targetPort: 80
+      nodePort: 30080
